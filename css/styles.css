@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  background-image: url("../media/stick__figure.jpeg");
+  height: 100vh;
+}
+
+.hangman {
+  background: #252532;
+  text-align: center;
+  padding: 0.5rem;
+  height: 550px;
+  width: 90%;
+  margin: 0 auto;
+  -webkit-transform: translateY(5%);
+          transform: translateY(5%);
+}
+
+.hangman .hangman__title {
+  color: orange;
+  font-weight: bolder;
+  margin-top: 1rem;
+}
+
+.hangman .button {
+  display: block;
+  padding: 0.5rem 1rem;
+  margin: 1rem auto;
+  border: 1px solid white;
+  border-radius: 2px;
+  color: orange;
+  background: #252532;
+  -webkit-transition: 0.4s all ease;
+  transition: 0.4s all ease;
+}
+
+.hangman .button:hover {
+  cursor: pointer;
+  font-size: 1.2rem;
+  -webkit-box-shadow: 0 0 5px 5px orange;
+          box-shadow: 0 0 5px 5px orange;
+}
+
+.instructions__list {
+  text-align: center;
+  list-style-type: none;
+  color: white;
+}
+
+.instructions__list li {
+  margin: 1rem;
+}
+
+.instructions__list li::before {
+  content: ">";
+  margin-right: 1rem;
+  color: orange;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+.instructions__list li::after {
+  content: ".";
+  margin-right: 1rem;
+  color: orange;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+.hangman__lives {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: gray;
+}
+
+.hangman__canvas {
+  border: 2px dashed white;
+}
+
+.hangman__guessword {
+  color: orange;
+  font-size: 1.6rem;
+  font-weight: bolder;
+  letter-spacing: 10px;
+}
+
+.hangman__tagline {
+  color: gray;
+  margin-bottom: 1rem;
+}
+
+.hangman__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  grid-gap: 0.4rem;
+  list-style-type: none;
+  justify-items: center;
+}
+
+.hangman__letter {
+  background: lightgray;
+  text-transform: uppercase;
+  padding: 0.1rem 0.5rem;
+}
+
+.hangman__letter:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 5px 5px orange;
+          box-shadow: 0 0 5px 5px orange;
+}
+
+.hangman__letter--taken {
+  background: #252532;
+  text-transform: uppercase;
+  padding: 0.1rem 0.5rem;
+}
+
+@media (max-width: 330px) {
+  .hangman {
+    width: 99%;
+  }
+}
+
+@media (min-height: 700px) {
+  .hangman {
+    height: 600px;
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+  .hangman__letter {
+    padding: 0.2rem 1rem;
+  }
+}
+
+@media (min-height: 1000px) {
+  .hangman {
+    padding: 0.5rem;
+    height: 800px;
+  }
+  .hangman .hangman__lives {
+    font-size: 1.4rem;
+  }
+  .hangman .hangman__title {
+    color: orange;
+    font-weight: bolder;
+    margin: 1rem;
+  }
+  .hangman .hangman__canvas {
+    width: 50%;
+  }
+  .hangman .hangman__guessword {
+    font-size: 2rem;
+  }
+  .hangman .hangman__tagline {
+    font-size: 1.4rem;
+  }
+  .hangman .hangman__letter {
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+  }
+  .hangman .button {
+    padding: 1rem 2rem;
+    margin: 1rem auto;
+    font-size: 1.2rem;
+  }
+  .hangman .button:hover {
+    cursor: pointer;
+    font-size: 1.4rem;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

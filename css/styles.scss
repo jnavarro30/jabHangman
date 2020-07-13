@@ -1,0 +1,198 @@
+// settings
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// variables
+$mainTextColor: orange;
+$mainBgColor: #252532;
+
+// mixins
+
+// container
+.container {
+    background-image: url("../media/stick__figure.jpeg");
+    height: 100vh;
+}
+// hangman
+
+.hangman {
+    background: $mainBgColor;
+    text-align: center;
+    padding: 0.5rem;
+    height: 550px;
+    width: 90%;
+    margin: 0 auto;
+    transform: translateY(5%);
+
+    .hangman__title {
+        color: $mainTextColor;
+        font-weight: bolder;
+        margin-top: 1rem;
+    }
+
+    .button {
+        display: block;
+        padding: 0.5rem 1rem;
+        margin: 1rem auto;
+        border: 1px solid white;
+        border-radius: 2px;
+        color: $mainTextColor;
+        background: $mainBgColor;
+        transition: 0.4s all ease;
+
+        &:hover {
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 0 5px 5px $mainTextColor;
+        }
+    }
+}
+
+// instructions
+
+.instructions__list {
+    text-align: center;
+    list-style-type: none;
+    color:white;
+
+    li {
+        margin: 1rem;
+
+        &::before {
+            content: ">";
+            margin-right: 1rem;
+            color: $mainTextColor;
+            font-weight: bolder;
+            font-size: 1.2rem;
+        }
+
+        &::after {
+            content: ".";
+            margin-right: 1rem;
+            color: $mainTextColor;
+            font-weight: bolder;
+            font-size: 1.2rem;
+        }
+        
+    }
+}
+
+// game
+
+.hangman__lives {
+    display: flex;
+    color: gray;
+}
+
+.hangman__canvas {
+    border: 2px dashed white;
+}
+
+.hangman__guessword {
+    color: $mainTextColor;
+    font-size: 1.6rem;
+    font-weight: bolder;
+    letter-spacing: 10px;
+}
+
+.hangman__tagline {
+    color: gray;
+    margin-bottom: 1rem;
+}
+
+.hangman__list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0.4rem;
+    list-style-type: none;
+    justify-items: center;
+}
+
+.hangman__letter {
+    background: lightgray;
+    text-transform: uppercase;
+    padding: 0.1rem 0.5rem;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 5px 5px $mainTextColor;
+    }
+}
+
+// classes
+
+.hangman__letter--taken {
+    background: $mainBgColor;
+    text-transform: uppercase;
+    padding: 0.1rem 0.5rem;
+}
+
+// responsive
+
+@media (max-width: 330px) {
+    .hangman {
+        width: 99%;
+    }
+}
+
+@media (min-height: 700px) {
+    .hangman {
+        height: 600px;
+        transform: translateY(10%);
+    }
+
+    .hangman__letter {
+        padding: 0.2rem 1rem;
+    }
+}
+
+@media (min-height: 1000px) {
+    .hangman {
+        padding: 0.5rem;
+        height: 800px;
+
+        .hangman__lives {
+            font-size: 1.4rem;
+
+        }
+    
+        .hangman__title {
+            color: $mainTextColor;
+            font-weight: bolder;
+            margin: 1rem;
+        }
+
+        .hangman__canvas {
+            width: 50%;
+        }
+
+        .hangman__guessword {
+            font-size: 2rem;
+        }
+
+        .hangman__tagline {
+            font-size: 1.4rem;
+        }
+
+        .hangman__letter {
+            padding: 0.5rem 1rem;
+            font-size: 1.4rem;
+        }
+    
+        .button {
+            padding: 1rem 2rem;
+            margin: 1rem auto;
+            font-size: 1.2rem;
+    
+            &:hover {
+                cursor: pointer;
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+
+
