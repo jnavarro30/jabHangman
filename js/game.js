@@ -8,7 +8,7 @@ const Game = (_ => {
     const data = {
         letters: [],
         takenLetters: [],
-        words: ['papoi', 'manatee', 'cocaine', 'love'],
+        words: ['one', 'two','three', 'four', 'five'],
         chosenWord: '',
         guessWord: '',
         lives: 7
@@ -26,6 +26,7 @@ const Game = (_ => {
         gamePage();
         listeners();
         Canvas.init();
+        console.log(chosenWord);
     }
 
     const listeners = _ => {
